@@ -1,21 +1,20 @@
 <div class="moldura">
-   <div class="bg-dark text-white backgroundTitulo ">
-    <div class="tituloNome">
-      {{livro?.name}}
-    </div>
-    </div>
-    <div class="backgroundImg">
-      <img class="img" [src]="livro?.image">
-    </div>
-    <div class="">
-      <div class="fonte">Tipo - {{livro?.type}}</div>
-      <div class="fonte">Ano - {{livro?.year}}</div>
-      <div class="description">Descrição - {{livro?.description}}</div>
-    </div>
-      <a [routerLink]="['/livros']" class="btn btn-alugar">Alugar</a>
-    <div class="" style="float:left;">
-      <a [routerLink]="['/livros']" class="btn btn-detalhe marginsBtn">Voltar</a>
-      <a [routerLink]="['/livros/edit', livro.id]" class="btn btn-detalhe">Editar</a>
-    </div>
+  <div class="bg-dark text-white backgroundTitulo ">
+   <div class="tituloNome">
+     {{livro?.name}}
+   </div>
+   </div>
+   <div class="backgroundImg">
+     <img class="img" [src]="livro?.image">
+   </div>
+   <div class="">
+     <div class="fonte">Tipo - {{livro?.type}}</div>
+     <div class="fonte">Ano - {{livro?.year}}</div>
+     <div class="description">Descrição - {{livro?.description}}</div>
+   </div>
+     <button [disabled]="isDisabled" (click)="addToRent(livro)" class="btn btn-alugar">Alugar</button>
+   <div class="" style="float:left;">
+     <a [routerLink]="['/livros']" class="btn btn-detalhe marginsBtn">Voltar</a>
+     <a [routerLink]="['/livros/edit', livro.id]" class="btn btn-detalhe">Editar</a>
+   </div>
 </div>
-

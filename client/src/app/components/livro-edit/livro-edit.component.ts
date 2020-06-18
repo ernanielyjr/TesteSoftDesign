@@ -4,12 +4,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Livro } from 'src/app/models/Livro';
 @Component({
-  selector: 'app-livro-form',
-  templateUrl: './livro-form.component.html',
-  styleUrls: ['./livro-form.component.css']
+  selector: 'app-livro-edit',
+  templateUrl: './livro-edit.component.html',
+  styleUrls: ['./livro-edit.component.css']
 })
-export class LivroFormComponent implements OnInit {
-
+export class LivroEditComponent implements OnInit {
   livro : Livro;
   edit: boolean = false;
 
@@ -17,7 +16,7 @@ export class LivroFormComponent implements OnInit {
     private livroService: LivrosService,
      private router: Router,
       private activatedRoute: ActivatedRoute
-      ) { }
+  ) { }
 
   ngOnInit(): void {
     this.livro = new Livro;
@@ -34,16 +33,14 @@ export class LivroFormComponent implements OnInit {
     });
   }
 
-  saveNewLivro() {
-    this.livroService.saveLivro(this.livro)
+  updateLivro() {
+    this.livroService.updateLivro(this.livro.id, this.livro)
       .subscribe(
-        res => {
+        res => { 
           console.log(res);
-          this.router.navigate(['/livros']);
+          this.router.navigate(['/livros/description']);
         },
         err => console.error(err)
       )
   }
-
-
 }

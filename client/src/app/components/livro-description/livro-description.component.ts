@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { LivrosService } from 'src/app/services/livros.service';
 import { Livro } from 'src/app/models/Livro';
+import { RentService } from '../../services/rent.service';
 
 @Component({
   selector: 'app-livro-description',
@@ -13,13 +14,14 @@ import { Livro } from 'src/app/models/Livro';
 export class LivroDescriptionComponent implements OnInit {
   
   livro : Livro;
-  edit: boolean = false;
- 
+  isDisabled: boolean = false;
+  rentLivro = [];
+  quantidade = 1;
 
   constructor(
     private livroService: LivrosService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private rentService: RentService
   ) { }
 
 
@@ -36,6 +38,28 @@ export class LivroDescriptionComponent implements OnInit {
         });
       }
     });
+
+    const productExistInRent = this.rentLivro.find(({name}) => name === this.livro.name);
+    if(productExistInRent){
+      this.isDisabled = true;
+    }else{
+      this.isDisabled = false;
+    }
+  }
+
+  open(content) {
+    this.rentLivro = this.rentService.getItems();
+    // this.modalService.open(content);
+  }
+
+  addToRent(livro) {
+    if(this.quantidade >= 1){
+      const productExistInRent = this.rentLivro.find(({name}) => name === livro.name);
+      if (!productExistInRent) {
+        this.rentLivro.push({...livro});
+        console.log(this.rentLivro)
+      }
+    }
   }
 
 }

@@ -18,10 +18,10 @@ import { FilterPipe } from './filter.pipe';
 
 // Services
 import { LivrosService } from './services/livros.service';
-import { InMemoryDataService } from './in-memory-data.service';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { fakeBackendProvider } from './helpers/fake-backend';
+import { LivroEditComponent } from './components/livro-edit/livro-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { fakeBackendProvider } from './helpers/fake-backend';
     RegisterComponent,
     AlertComponent,
     FilterPipe,
+    LivroEditComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -42,7 +43,6 @@ import { fakeBackendProvider } from './helpers/fake-backend';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

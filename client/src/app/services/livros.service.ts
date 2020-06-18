@@ -10,7 +10,7 @@ import { Livro } from '../models/Livro';
 })
 export class LivrosService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = 'http://localhost:5555';
   private headers: Headers = new Headers ({'Content-Type' : 'application/json'})
   
   constructor(
@@ -36,12 +36,4 @@ export class LivrosService {
   updateLivro(id: string|number, updatedLivro: Livro): Observable<Livro> {
     return this.http.put<Livro>(`${this.API_URI}/livros/${id}`, updatedLivro);
   }
-//   updateLivro(livro: Livro): Promise<Livro> {
-//     const url = `${this.API_URI}/livros/${livro.id}`; //app/cliente/:id
-//     return this.http
-//     .put(url, JSON.stringify(livro))
-//     .toPromise()
-//     .then(() => livro as Livro)  
-// }
-
 }

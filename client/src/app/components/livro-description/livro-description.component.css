@@ -69,6 +69,7 @@
 
     .description{
         position: absolute;
+        top: 230px;
         font-family: cursive;
         max-width: 400px;
         margin-top: 34px;
