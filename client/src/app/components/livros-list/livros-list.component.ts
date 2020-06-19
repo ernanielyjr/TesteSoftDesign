@@ -39,4 +39,15 @@ export class LivrosListComponent implements OnInit {
       )
   }
 
+  delRentLivro(id: number) {
+    this.livroService.deleteRentLivro(id)
+    .toPromise()
+      .then((livros : Livro[]) => {
+          this.livros = livros;
+          this.getLivros();
+      },
+        err => console.log(err)
+      )
+  }
+
 }

@@ -8,5 +8,3 @@ export class Livro{
     image?: string;
     stock: number;
 }
-
-export var rentLivro = []

@@ -3,7 +3,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { LivrosService } from 'src/app/services/livros.service';
 import { Livro } from 'src/app/models/Livro';
-import { RentService } from '../../services/rent.service';
+import { disableDebugTools } from '@angular/platform-browser';
+import { Button } from 'protractor';
+import { exists } from 'fs';
 
 @Component({
   selector: 'app-livro-description',
@@ -12,18 +14,14 @@ import { RentService } from '../../services/rent.service';
 })
 
 export class LivroDescriptionComponent implements OnInit {
-  
   livro : Livro;
   isDisabled: boolean = false;
-  rentLivro = [];
-  quantidade = 1;
 
   constructor(
     private livroService: LivrosService,
-    private activatedRoute: ActivatedRoute,
-    private rentService: RentService
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
-
 
   ngOnInit() {
     this.livro = new Livro;
@@ -38,28 +36,19 @@ export class LivroDescriptionComponent implements OnInit {
         });
       }
     });
-
-    const productExistInRent = this.rentLivro.find(({name}) => name === this.livro.name);
-    if(productExistInRent){
-      this.isDisabled = true;
-    }else{
-      this.isDisabled = false;
-    }
   }
 
-  open(content) {
-    this.rentLivro = this.rentService.getItems();
-    // this.modalService.open(content);
-  }
-
-  addToRent(livro) {
-    if(this.quantidade >= 1){
-      const productExistInRent = this.rentLivro.find(({name}) => name === livro.name);
-      if (!productExistInRent) {
-        this.rentLivro.push({...livro});
-        console.log(this.rentLivro)
-      }
-    }
+  saveNewRentLivro() {
+  
+    this.livroService.saveRentLivro(this.livro)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/livros']);
+          alert("Livro alugado com sucesso")
+        },
+        err => console.error(err, alert("Livro ja está alugado!!"), this.isDisabled = true)
+      )
   }
 
 }

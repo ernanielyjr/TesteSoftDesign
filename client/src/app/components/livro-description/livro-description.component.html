@@ -12,9 +12,9 @@
      <div class="fonte">Ano - {{livro?.year}}</div>
      <div class="description">Descrição - {{livro?.description}}</div>
    </div>
-     <button [disabled]="isDisabled" (click)="addToRent(livro)" class="btn btn-alugar">Alugar</button>
+     <button [disabled]="isDisabled" (click)="saveNewRentLivro(id)" class="btn btn-alugar">Alugar</button>
    <div class="" style="float:left;">
-     <a [routerLink]="['/livros']" class="btn btn-detalhe marginsBtn">Voltar</a>
-     <a [routerLink]="['/livros/edit', livro.id]" class="btn btn-detalhe">Editar</a>
+     <button [routerLink]="['/livros']" class="btn btn-detalhe marginsBtn">Voltar</button>
+     <button [disabled]="isDisabled" [routerLink]="['/livros/edit', livro.id]" class="btn btn-detalhe">Editar</button>
    </div>
 </div>
