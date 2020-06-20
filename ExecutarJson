@@ -1,3 +1,0 @@
-json-server -p 5555 livros.json
-
-Executar json ja definido

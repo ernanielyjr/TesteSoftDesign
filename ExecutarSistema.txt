@@ -1,0 +1,27 @@
+O livros.json esta dentro da pasta Client, ele é o banco de dados.
+
+-
+
+para executar o crud de livros e aluguel
+
+instale o json-server na pasta Client
+
+npm i json-server
+
+após execute
+
+json-server -p 5555 livros.json
+
+
+-
+
+
+após de start no servidor principal
+
+instale o angular 
+
+npm install @angular/cli
+
+execute 
+
+ng serve --open
