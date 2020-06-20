@@ -3,9 +3,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { LivrosService } from 'src/app/services/livros.service';
 import { Livro } from 'src/app/models/Livro';
-import { disableDebugTools } from '@angular/platform-browser';
-import { Button } from 'protractor';
-import { exists } from 'fs';
 
 @Component({
   selector: 'app-livro-description',
