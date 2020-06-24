@@ -2,7 +2,7 @@
 <div>
   <div *ngIf="(livros | filter: searchText).length > 0; else noResults">
     <div class="livros moldura" *ngFor="let livro of livros | filter: searchText; let i = index">
-          
+    <button class="btn btn-danger btn-deletar"  (click)="delRentLivro(livro.id)"><i class="far fa-trash-alt"></i></button>
           <div class="bg-dark text-white backgroundTitulo">
             <div class="tituloNome">
               {{livro.name}}

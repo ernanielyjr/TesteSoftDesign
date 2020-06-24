@@ -11,6 +11,7 @@ import { Livro } from 'src/app/models/Livro';
 })
 
 export class LivroDescriptionComponent implements OnInit {
+  livros: Livro[];
   livro : Livro;
   isDisabled: boolean = false;
 
@@ -52,6 +53,26 @@ export class LivroDescriptionComponent implements OnInit {
           alert("Livro alugado com sucesso")
         },
         err => console.error(err, alert("Livro ja está alugado!!"))
+      )
+  }
+
+  delLivro(id: number) {
+    this.livroService.deleteLivro(id)
+    .toPromise()
+      .then((livros : Livro[]) => {
+          this.livros = livros;
+      },
+        err => console.log(err)
+      )
+  }
+
+  delRentLivro(id: number) {
+    this.livroService.deleteRentLivro(id)
+    .toPromise()
+      .then((livros : Livro[]) => {
+          this.livros = livros;
+      },
+        err => console.log(err)
       )
   }
 

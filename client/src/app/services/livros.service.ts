@@ -22,7 +22,7 @@ export class LivrosService {
    }
 
   getRentLivros() {
-    return this.http.get(`${this.API_URI}/livros`);
+    return this.http.get(`${this.API_URI}/rentLivros`);
   }
 
   getLivro(id: number) {

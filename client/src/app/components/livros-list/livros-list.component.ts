@@ -28,26 +28,4 @@ export class LivrosListComponent implements OnInit {
         }).catch(err => console.log(err));
   }
 
-  delLivro(id: number) {
-    this.livroService.deleteLivro(id)
-    .toPromise()
-      .then((livros : Livro[]) => {
-          this.livros = livros;
-          this.getLivros();
-      },
-        err => console.log(err)
-      )
-  }
-
-  delRentLivro(id: number) {
-    this.livroService.deleteRentLivro(id)
-    .toPromise()
-      .then((livros : Livro[]) => {
-          this.livros = livros;
-          this.getLivros();
-      },
-        err => console.log(err)
-      )
-  }
-
 }

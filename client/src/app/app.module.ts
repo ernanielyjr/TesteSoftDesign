@@ -21,6 +21,7 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { LivroEditComponent } from './components/livro-edit/livro-edit.component';
+import { LivroRentedComponent } from './components/livro-rented/livro-rented.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LivroEditComponent } from './components/livro-edit/livro-edit.component
     LivrosListComponent,
     LivroFormComponent,
     LivroDescriptionComponent,
+    LivroRentedComponent,
     LoginComponent,
     RegisterComponent,
     AlertComponent,

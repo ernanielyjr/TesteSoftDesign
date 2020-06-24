@@ -5,6 +5,7 @@ import { LivroDescriptionComponent } from './components/livro-description/livro-
 import { LivrosListComponent } from './components/livros-list/livros-list.component';
 import { LivroFormComponent } from './components/livro-form/livro-form.component';
 import { LivroEditComponent } from './components/livro-edit/livro-edit.component';
+import { LivroRentedComponent } from './components/livro-rented/livro-rented.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: 'livros',
     component: LivrosListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'livrosAlugados',
+    component: LivroRentedComponent,
     canActivate: [AuthGuard]
   },
   {

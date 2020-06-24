@@ -1,5 +1,6 @@
 <div class="moldura">
   <div class="bg-dark text-white backgroundTitulo ">
+    <button [disabled]="isDisabled" class="btn btn-danger botaoExcluir" [routerLink]="['/livros']"  (click)="delLivro(livro.id)"><i class="far fa-trash-alt"></i></button>
    <div class="tituloNome">
      {{livro?.name}}
    </div>
@@ -12,7 +13,7 @@
      <div class="fonte">Ano - {{livro?.year}}</div>
      <div class="description">Descrição - {{livro?.description}}</div>
    </div>
-     <button [disabled]="isDisabled" (click)="saveNewRentLivro(id)" class="btn btn-alugar">Alugar</button>
+    <button [disabled]="isDisabled" (click)="saveNewRentLivro(id)" class="btn btn-alugar">Alugar</button>
    <div class="" style="float:left;">
      <button [routerLink]="['/livros']" class="btn btn-detalhe marginsBtn">Voltar</button>
      <button [disabled]="isDisabled" [routerLink]="['/livros/edit', livro.id]" class="btn btn-detalhe">Editar</button>
