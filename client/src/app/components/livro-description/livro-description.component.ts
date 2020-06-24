@@ -32,6 +32,13 @@ export class LivroDescriptionComponent implements OnInit {
              this.livro = livro;
         });
       }
+        if(id){
+          this.livroService.getRentLivro(id)
+          .toPromise()
+          .then((livro: Livro)=> {
+            this.isDisabled = true
+          });
+        }
     });
   }
 
@@ -44,7 +51,7 @@ export class LivroDescriptionComponent implements OnInit {
           this.router.navigate(['/livros']);
           alert("Livro alugado com sucesso")
         },
-        err => console.error(err, alert("Livro ja está alugado!!"), this.isDisabled = true)
+        err => console.error(err, alert("Livro ja está alugado!!"))
       )
   }
 
