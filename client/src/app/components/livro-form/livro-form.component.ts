@@ -10,8 +10,8 @@ import { Livro } from 'src/app/models/Livro';
 })
 export class LivroFormComponent implements OnInit {
 
-  livro : Livro;
-  edit: boolean = false;
+  livro: Livro;
+  edit = false;
 
   constructor(
     private livroService: LivrosService,
@@ -21,12 +21,12 @@ export class LivroFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.livro = new Livro;
-    this.activatedRoute.params.forEach((params: Params)=>{
-      let id: number = +params['id'];
-        if(id){
+    this.activatedRoute.params.forEach((params: Params) => {
+      const id: number = +params['id'];
+        if (id) {
         this.livroService.getLivro(id)
         .toPromise()
-            .then((livro: Livro)=> {
+            .then((livro: Livro) => {
                 console.log(livro);
                 this.livro = livro;
             });
@@ -42,6 +42,6 @@ export class LivroFormComponent implements OnInit {
           this.router.navigate(['/livros']);
         },
         err => console.error(err)
-      )
+      );
   }
 }

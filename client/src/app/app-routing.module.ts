@@ -12,16 +12,16 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { 
+  {
     path: 'users',
     component: HomeComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
     component: LoginComponent
   },
-  { 
+  {
     path: 'register',
     component: RegisterComponent
   },
@@ -38,7 +38,7 @@ const routes: Routes = [
   {
     path: 'livros/add',
     component: LivroFormComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
   {
     path: 'livros/edit/:id',
@@ -50,9 +50,9 @@ const routes: Routes = [
     component: LivroDescriptionComponent,
     canActivate: [AuthGuard]
   },
-  { 
+  {
     path: '**',
-    redirectTo: 'livros' 
+    redirectTo: 'livros'
   }
 ];
 

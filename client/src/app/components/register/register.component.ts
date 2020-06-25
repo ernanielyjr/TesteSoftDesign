@@ -18,15 +18,15 @@ export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
-    
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
     private usuarioService: UserService,
     private alertService: AlertService
-) { 
-    if (this.authenticationService.currentUserValue) { 
+) {
+    if (this.authenticationService.currentUserValue) {
         this.router.navigate(['/']);
     }
 }

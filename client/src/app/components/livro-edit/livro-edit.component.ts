@@ -9,8 +9,8 @@ import { Livro } from 'src/app/models/Livro';
   styleUrls: ['./livro-edit.component.css']
 })
 export class LivroEditComponent implements OnInit {
-  livro : Livro;
-  edit: boolean = false;
+  livro: Livro;
+  edit = false;
 
   constructor(
     private livroService: LivrosService,
@@ -20,12 +20,12 @@ export class LivroEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.livro = new Livro;
-    this.activatedRoute.params.forEach((params: Params)=>{
-      let id: number = +params['id'];
-        if(id){
+    this.activatedRoute.params.forEach((params: Params) => {
+      const id: number = +params['id'];
+        if (id) {
         this.livroService.getLivro(id)
         .toPromise()
-            .then((livro: Livro)=> {
+            .then((livro: Livro) => {
                 console.log(livro);
                 this.livro = livro;
             });
@@ -36,11 +36,11 @@ export class LivroEditComponent implements OnInit {
   updateLivro() {
     this.livroService.updateLivro(this.livro.id, this.livro)
       .subscribe(
-        res => { 
+        res => {
           console.log(res);
           this.router.navigate(['/livros/description']);
         },
         err => console.error(err)
-      )
+      );
   }
 }

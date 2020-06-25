@@ -9,18 +9,18 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     constructor() { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+        const users: any[] = JSON.parse(localStorage.getItem('users')) || [];
 
         return of(null).pipe(mergeMap(() => {
 
             if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
-                let filteredUsers = users.filter(user => {
+                const filteredUsers = users.filter(user => {
                     return user.username === request.body.username && user.password === request.body.password;
                 });
 
                 if (filteredUsers.length) {
-                    let user = filteredUsers[0];
-                    let body = {
+                    const user = filteredUsers[0];
+                    const body = {
                         id: user.id,
                         username: user.username,
                         firstName: user.firstName,
@@ -44,10 +44,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             if (request.url.match(/\/users\/\d+$/) && request.method === 'GET') {
                 if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
-                    let urlParts = request.url.split('/');
-                    let id = parseInt(urlParts[urlParts.length - 1]);
-                    let matchedUsers = users.filter(user => { return user.id === id; });
-                    let user = matchedUsers.length ? matchedUsers[0] : null;
+                    const urlParts = request.url.split('/');
+                    const id = parseInt(urlParts[urlParts.length - 1]);
+                    const matchedUsers = users.filter(user => user.id === id);
+                    const user = matchedUsers.length ? matchedUsers[0] : null;
 
                     return of(new HttpResponse({ status: 200, body: user }));
                 } else {
@@ -56,9 +56,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
 
             if (request.url.endsWith('/users/register') && request.method === 'POST') {
-                let newUser = request.body;
+                const newUser = request.body;
 
-                let duplicateUser = users.filter(user => { return user.username === newUser.username; }).length;
+                const duplicateUser = users.filter(user => user.username === newUser.username).length;
                 if (duplicateUser) {
                     return throwError({ error: { message: 'Nome "' + newUser.username + '" ja existe' } });
                 }
@@ -72,10 +72,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             if (request.url.match(/\/users\/\d+$/) && request.method === 'DELETE') {
                 if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
-                    let urlParts = request.url.split('/');
-                    let id = parseInt(urlParts[urlParts.length - 1]);
+                    const urlParts = request.url.split('/');
+                    const id = parseInt(urlParts[urlParts.length - 1]);
                     for (let i = 0; i < users.length; i++) {
-                        let user = users[i];
+                        const user = users[i];
                         if (user.id === id) {
                             users.splice(i, 1);
                             localStorage.setItem('users', JSON.stringify(users));
@@ -90,7 +90,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
 
             return next.handle(request);
-            
+
         }))
 
         .pipe(materialize())

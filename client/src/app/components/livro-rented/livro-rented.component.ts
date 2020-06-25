@@ -12,7 +12,7 @@ import { Livro } from 'src/app/models/Livro';
 
 export class LivroRentedComponent implements OnInit {
   livros: Livro[];
-  isDisabled: boolean = false;
+  isDisabled = false;
 
   constructor(
     private livroService: LivrosService,
@@ -27,7 +27,7 @@ export class LivroRentedComponent implements OnInit {
   getRentLivros() {
     this.livroService.getRentLivros()
     .toPromise()
-        .then((livros : Livro[]) => {
+        .then((livros: Livro[]) => {
             this.livros = livros;
         }).catch(err => console.log(err));
   }
@@ -35,12 +35,12 @@ export class LivroRentedComponent implements OnInit {
   delRentLivro(id: number) {
     this.livroService.deleteRentLivro(id)
     .toPromise()
-      .then((livros : Livro[]) => {
+      .then((livros: Livro[]) => {
           this.livros = livros;
-          alert("Livro está disponivel novamente!!")
+          alert('Livro está disponivel novamente!!');
       },
         err => console.log(err)
-      )
+      );
   }
 
 }

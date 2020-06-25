@@ -23,7 +23,7 @@ export class LivrosListComponent implements OnInit {
   getLivros() {
     this.livroService.getLivros()
     .toPromise()
-        .then((livros : Livro[]) => {
+        .then((livros: Livro[]) => {
             this.livros = livros;
         }).catch(err => console.log(err));
   }

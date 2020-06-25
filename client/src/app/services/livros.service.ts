@@ -11,8 +11,8 @@ import { Livro } from '../models/Livro';
 export class LivrosService {
 
   API_URI = 'http://localhost:5555';
-  private headers: Headers = new Headers ({'Content-Type' : 'application/json'})
-  
+  private headers: Headers = new Headers ({'Content-Type' : 'application/json'});
+
   constructor(
     private http: HttpClient,
   ) { }

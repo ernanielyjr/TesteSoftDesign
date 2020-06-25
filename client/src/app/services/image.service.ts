@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
 
 const URL = '../assets/data.json';
 
@@ -12,6 +12,6 @@ export class DataService {
  }
 
  getData() {
-   return this.http.get(URL)
+   return this.http.get(URL);
  }
 }
