@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Livro } from '../../models/Livro';
 import { LivrosService } from '../../services/livros.service';
 
@@ -14,9 +13,7 @@ export class LivroRentedComponent implements OnInit {
 
   constructor(
     private livroService: LivrosService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getRentLivros();

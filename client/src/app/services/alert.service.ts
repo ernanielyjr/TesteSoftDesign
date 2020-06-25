@@ -7,7 +7,7 @@ export class AlertService {
   private subject = new Subject<any>();
   private keepAfterNavigationChange = false;
 
-  constructor(private router: Router) {
+  constructor(router: Router) {
     // Limpar mensagens de alerta
     router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
