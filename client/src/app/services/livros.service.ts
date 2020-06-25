@@ -1,13 +1,13 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Livro } from "../models/Livro";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Livro } from '../models/Livro';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class LivrosService {
-  private API_URI = "http://localhost:5555";
+  private API_URI = 'http://localhost:5555';
 
   constructor(private http: HttpClient) {}
 

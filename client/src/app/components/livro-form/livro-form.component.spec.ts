@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { LivroFormComponent } from "./livro-form.component";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { LivroFormComponent } from './livro-form.component';
 
-describe("LivroFormComponent", () => {
+describe('LivroFormComponent', () => {
   let component: LivroFormComponent;
   let fixture: ComponentFixture<LivroFormComponent>;
 
@@ -17,7 +17,7 @@ describe("LivroFormComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params, Router } from "@angular/router";
-import { Livro } from "../../models/Livro";
-import { LivrosService } from "../../services/livros.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Livro } from '../../models/Livro';
+import { LivrosService } from '../../services/livros.service';
 
 @Component({
-  selector: "app-livro-form",
-  templateUrl: "./livro-form.component.html",
-  styleUrls: ["./livro-form.component.css"],
+  selector: 'app-livro-form',
+  templateUrl: './livro-form.component.html',
+  styleUrls: ['./livro-form.component.css'],
 })
 export class LivroFormComponent implements OnInit {
   livro: Livro;
@@ -21,7 +21,7 @@ export class LivroFormComponent implements OnInit {
   ngOnInit(): void {
     this.livro = new Livro();
     this.activatedRoute.params.forEach((params: Params) => {
-      const id: number = +params["id"];
+      const id: number = +params['id'];
       if (id) {
         this.livroService
           .getLivro(id)
@@ -38,7 +38,7 @@ export class LivroFormComponent implements OnInit {
     this.livroService.saveLivro(this.livro).subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(["/livros"]);
+        this.router.navigate(['/livros']);
       },
       (err) => console.error(err)
     );

@@ -1,15 +1,15 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { first, isEmpty } from "rxjs/operators";
-import { Usuario } from "../../models/Usuario";
-import { AuthenticationService } from "../../services/authentication.service";
-import { UserService } from "../../services/usuario.service";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { first, isEmpty } from 'rxjs/operators';
+import { Usuario } from '../../models/Usuario';
+import { AuthenticationService } from '../../services/authentication.service';
+import { UserService } from '../../services/usuario.service';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   currentUser: Usuario;
@@ -59,6 +59,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(["/login"]);
+    this.router.navigate(['/login']);
   }
 }

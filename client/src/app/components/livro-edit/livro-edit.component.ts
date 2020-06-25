@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params, Router } from "@angular/router";
-import { Livro } from "../../models/Livro";
-import { LivrosService } from "../../services/livros.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Livro } from '../../models/Livro';
+import { LivrosService } from '../../services/livros.service';
 
 @Component({
-  selector: "app-livro-edit",
-  templateUrl: "./livro-edit.component.html",
-  styleUrls: ["./livro-edit.component.css"],
+  selector: 'app-livro-edit',
+  templateUrl: './livro-edit.component.html',
+  styleUrls: ['./livro-edit.component.css'],
 })
 export class LivroEditComponent implements OnInit {
   livro: Livro;
@@ -21,7 +21,7 @@ export class LivroEditComponent implements OnInit {
   ngOnInit(): void {
     this.livro = new Livro();
     this.activatedRoute.params.forEach((params: Params) => {
-      const id: number = +params["id"];
+      const id: number = +params['id'];
       if (id) {
         this.livroService
           .getLivro(id)
@@ -38,7 +38,7 @@ export class LivroEditComponent implements OnInit {
     this.livroService.updateLivro(this.livro.id, this.livro).subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(["/livros/description"]);
+        this.router.navigate(['/livros/description']);
       },
       (err) => console.error(err)
     );

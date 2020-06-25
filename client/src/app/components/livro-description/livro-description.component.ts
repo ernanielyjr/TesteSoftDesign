@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params, Router } from "@angular/router";
-import { Livro } from "../../models/Livro";
-import { LivrosService } from "../../services/livros.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Livro } from '../../models/Livro';
+import { LivrosService } from '../../services/livros.service';
 
 @Component({
-  selector: "app-livro-description",
-  templateUrl: "./livro-description.component.html",
-  styleUrls: ["./livro-description.component.css"],
+  selector: 'app-livro-description',
+  templateUrl: './livro-description.component.html',
+  styleUrls: ['./livro-description.component.css'],
 })
 export class LivroDescriptionComponent implements OnInit {
   livros: Livro[];
@@ -22,7 +22,7 @@ export class LivroDescriptionComponent implements OnInit {
   ngOnInit() {
     this.livro = new Livro();
     this.activatedRoute.params.forEach((params: Params) => {
-      const id: number = +params["id"];
+      const id: number = +params['id'];
       if (id) {
         this.livroService
           .getLivro(id)
@@ -47,10 +47,10 @@ export class LivroDescriptionComponent implements OnInit {
     this.livroService.saveRentLivro(this.livro).subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(["/livros"]);
-        alert("Livro alugado com sucesso");
+        this.router.navigate(['/livros']);
+        alert('Livro alugado com sucesso');
       },
-      (err) => console.error(err, alert("Livro ja está alugado!!"))
+      (err) => console.error(err, alert('Livro ja está alugado!!'))
     );
   }
 

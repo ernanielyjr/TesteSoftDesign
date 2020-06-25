@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { Usuario } from "./models/Usuario";
-import { AuthenticationService } from "./services/authentication.service";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from './models/Usuario';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
+  selector: 'app-root',
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   currentUser: Usuario;
@@ -21,6 +21,6 @@ export class AppComponent {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(["/login"]);
+    this.router.navigate(['/login']);
   }
 }

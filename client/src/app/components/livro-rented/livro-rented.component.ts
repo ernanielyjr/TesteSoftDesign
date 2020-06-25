@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Livro } from "../../models/Livro";
-import { LivrosService } from "../../services/livros.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Livro } from '../../models/Livro';
+import { LivrosService } from '../../services/livros.service';
 
 @Component({
-  selector: "app-livro-rented",
-  templateUrl: "./livro-rented.component.html",
-  styleUrls: ["./livro-rented.component.css"],
+  selector: 'app-livro-rented',
+  templateUrl: './livro-rented.component.html',
+  styleUrls: ['./livro-rented.component.css'],
 })
 export class LivroRentedComponent implements OnInit {
   livros: Livro[];
@@ -39,7 +39,7 @@ export class LivroRentedComponent implements OnInit {
       .then(
         (livros: Livro[]) => {
           this.livros = livros;
-          alert("Livro está disponivel novamente!!");
+          alert('Livro está disponivel novamente!!');
         },
         (err) => console.log(err)
       );
