@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.userService.getAll().pipe(first()).subscribe(users => {
       this.users = users;
       if (isEmpty) {
-        this.logout;
+        this.logout();
       }
     });
   }

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Headers } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Livro } from '../models/Livro';
 
@@ -8,9 +7,7 @@ import { Livro } from '../models/Livro';
   providedIn: 'root'
 })
 export class LivrosService {
-
-  API_URI = 'http://localhost:5555';
-  private headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+  private API_URI = 'http://localhost:5555';
 
   constructor(
     private http: HttpClient,

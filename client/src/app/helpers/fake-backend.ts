@@ -45,8 +45,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       if (request.url.match(/\/users\/\d+$/) && request.method === 'GET') {
         if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
           const urlParts = request.url.split('/');
-          const id = parseInt(urlParts[urlParts.length - 1]);
-          const matchedUsers = users.filter(user => user.id === id);
+          const id = parseInt(urlParts[urlParts.length - 1], 10);
+          const matchedUsers = users.filter(item => item.id === id);
           const user = matchedUsers.length ? matchedUsers[0] : null;
 
           return of(new HttpResponse({ status: 200, body: user }));
@@ -73,7 +73,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       if (request.url.match(/\/users\/\d+$/) && request.method === 'DELETE') {
         if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
           const urlParts = request.url.split('/');
-          const id = parseInt(urlParts[urlParts.length - 1]);
+          const id = parseInt(urlParts[urlParts.length - 1], 10);
           for (let i = 0; i < users.length; i++) {
             const user = users[i];
             if (user.id === id) {
