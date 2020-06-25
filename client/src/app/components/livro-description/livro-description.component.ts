@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Livro } from 'src/app/models/Livro';
-import { LivrosService } from 'src/app/services/livros.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Livro } from "src/app/models/Livro";
+import { LivrosService } from "src/app/services/livros.service";
 
 @Component({
-  selector: 'app-livro-description',
-  templateUrl: './livro-description.component.html',
-  styleUrls: ['./livro-description.component.css']
+  selector: "app-livro-description",
+  templateUrl: "./livro-description.component.html",
+  styleUrls: ["./livro-description.component.css"],
 })
-
 export class LivroDescriptionComponent implements OnInit {
   livros: Livro[];
   livro: Livro;
@@ -18,14 +17,15 @@ export class LivroDescriptionComponent implements OnInit {
     private livroService: LivrosService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
-    this.livro = new Livro;
+    this.livro = new Livro();
     this.activatedRoute.params.forEach((params: Params) => {
-      const id: number = +params['id'];
+      const id: number = +params["id"];
       if (id) {
-        this.livroService.getLivro(id)
+        this.livroService
+          .getLivro(id)
           .toPromise()
           .then((livro: Livro) => {
             console.log(livro);
@@ -33,7 +33,8 @@ export class LivroDescriptionComponent implements OnInit {
           });
       }
       if (id) {
-        this.livroService.getRentLivro(id)
+        this.livroService
+          .getRentLivro(id)
           .toPromise()
           .then((livro: Livro) => {
             this.isDisabled = true;
@@ -43,36 +44,37 @@ export class LivroDescriptionComponent implements OnInit {
   }
 
   saveNewRentLivro() {
-
-    this.livroService.saveRentLivro(this.livro)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.router.navigate(['/livros']);
-          alert('Livro alugado com sucesso');
-        },
-        err => console.error(err, alert('Livro ja está alugado!!'))
-      );
+    this.livroService.saveRentLivro(this.livro).subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate(["/livros"]);
+        alert("Livro alugado com sucesso");
+      },
+      (err) => console.error(err, alert("Livro ja está alugado!!"))
+    );
   }
 
   delLivro(id: number) {
-    this.livroService.deleteLivro(id)
+    this.livroService
+      .deleteLivro(id)
       .toPromise()
-      .then((livros: Livro[]) => {
-        this.livros = livros;
-      },
-        err => console.log(err)
+      .then(
+        (livros: Livro[]) => {
+          this.livros = livros;
+        },
+        (err) => console.log(err)
       );
   }
 
   delRentLivro(id: number) {
-    this.livroService.deleteRentLivro(id)
+    this.livroService
+      .deleteRentLivro(id)
       .toPromise()
-      .then((livros: Livro[]) => {
-        this.livros = livros;
-      },
-        err => console.log(err)
+      .then(
+        (livros: Livro[]) => {
+          this.livros = livros;
+        },
+        (err) => console.log(err)
       );
   }
-
 }

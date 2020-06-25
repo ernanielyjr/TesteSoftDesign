@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Livro } from 'src/app/models/Livro';
-import { LivrosService } from 'src/app/services/livros.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Livro } from "src/app/models/Livro";
+import { LivrosService } from "src/app/services/livros.service";
 
 @Component({
-  selector: 'app-livro-edit',
-  templateUrl: './livro-edit.component.html',
-  styleUrls: ['./livro-edit.component.css']
+  selector: "app-livro-edit",
+  templateUrl: "./livro-edit.component.html",
+  styleUrls: ["./livro-edit.component.css"],
 })
 export class LivroEditComponent implements OnInit {
   livro: Livro;
@@ -16,14 +16,15 @@ export class LivroEditComponent implements OnInit {
     private livroService: LivrosService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.livro = new Livro;
+    this.livro = new Livro();
     this.activatedRoute.params.forEach((params: Params) => {
-      const id: number = +params['id'];
+      const id: number = +params["id"];
       if (id) {
-        this.livroService.getLivro(id)
+        this.livroService
+          .getLivro(id)
           .toPromise()
           .then((livro: Livro) => {
             console.log(livro);
@@ -34,13 +35,12 @@ export class LivroEditComponent implements OnInit {
   }
 
   updateLivro() {
-    this.livroService.updateLivro(this.livro.id, this.livro)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.router.navigate(['/livros/description']);
-        },
-        err => console.error(err)
-      );
+    this.livroService.updateLivro(this.livro.id, this.livro).subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate(["/livros/description"]);
+      },
+      (err) => console.error(err)
+    );
   }
 }

@@ -1,15 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { first, isEmpty } from 'rxjs/operators';
-import { Usuario } from 'src/app/models/Usuario';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { UserService } from 'src/app/services/usuario.service';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Subscription } from "rxjs";
+import { first, isEmpty } from "rxjs/operators";
+import { Usuario } from "src/app/models/Usuario";
+import { AuthenticationService } from "src/app/services/authentication.service";
+import { UserService } from "src/app/services/usuario.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   currentUser: Usuario;
@@ -21,9 +21,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     private authenticationService: AuthenticationService,
     private userService: UserService
   ) {
-    this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
-      this.currentUser = user;
-    });
+    this.currentUserSubscription = this.authenticationService.currentUser.subscribe(
+      (user) => {
+        this.currentUser = user;
+      }
+    );
   }
 
   ngOnInit() {
@@ -35,22 +37,28 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   deleteUser(id: number) {
-    this.userService.delete(id).pipe(first()).subscribe(() => {
-      this.loadAllUsers();
-    });
+    this.userService
+      .delete(id)
+      .pipe(first())
+      .subscribe(() => {
+        this.loadAllUsers();
+      });
   }
 
   private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
-      if (isEmpty) {
-        this.logout();
-      }
-    });
+    this.userService
+      .getAll()
+      .pipe(first())
+      .subscribe((users) => {
+        this.users = users;
+        if (isEmpty) {
+          this.logout();
+        }
+      });
   }
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(["/login"]);
   }
 }

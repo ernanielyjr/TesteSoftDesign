@@ -1,15 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { LivroEditComponent } from './livro-edit.component';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { LivroEditComponent } from "./livro-edit.component";
 
-describe('LivroEditComponent', () => {
+describe("LivroEditComponent", () => {
   let component: LivroEditComponent;
   let fixture: ComponentFixture<LivroEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LivroEditComponent]
-    })
-      .compileComponents();
+      declarations: [LivroEditComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -18,7 +17,7 @@ describe('LivroEditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Livro } from 'src/app/models/Livro';
-import { LivrosService } from 'src/app/services/livros.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Livro } from "src/app/models/Livro";
+import { LivrosService } from "src/app/services/livros.service";
 
 @Component({
-  selector: 'app-livro-rented',
-  templateUrl: './livro-rented.component.html',
-  styleUrls: ['./livro-rented.component.css']
+  selector: "app-livro-rented",
+  templateUrl: "./livro-rented.component.html",
+  styleUrls: ["./livro-rented.component.css"],
 })
-
 export class LivroRentedComponent implements OnInit {
   livros: Livro[];
   isDisabled = false;
@@ -17,29 +16,32 @@ export class LivroRentedComponent implements OnInit {
     private livroService: LivrosService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getRentLivros();
   }
 
   getRentLivros() {
-    this.livroService.getRentLivros()
+    this.livroService
+      .getRentLivros()
       .toPromise()
       .then((livros: Livro[]) => {
         this.livros = livros;
-      }).catch(err => console.log(err));
+      })
+      .catch((err) => console.log(err));
   }
 
   delRentLivro(id: number) {
-    this.livroService.deleteRentLivro(id)
+    this.livroService
+      .deleteRentLivro(id)
       .toPromise()
-      .then((livros: Livro[]) => {
-        this.livros = livros;
-        alert('Livro está disponivel novamente!!');
-      },
-        err => console.log(err)
+      .then(
+        (livros: Livro[]) => {
+          this.livros = livros;
+          alert("Livro está disponivel novamente!!");
+        },
+        (err) => console.log(err)
       );
   }
-
 }
