@@ -26,10 +26,10 @@
 
 <div class="col-md-4">
   <div class="card card-body text-center position">
-    <img [src]="livro.image == '' ? '/assets/noimage.png' : livro.image" alt="Sem imagem" class="card-img-top">
-    <h3>{{livro.id}}. {{livro.name == '' ? 'livro Name' : livro.name}}</h3>
-    <p>{{livro.type == '' ? 'livro Type' : livro.type}}</p>
-    <p>{{livro.description == '' ? 'livro Descrition' : livro.description}}</p>
-    <p>{{livro.year == '' ? 'livro Year' : livro.year}}</p>
+    <img [src]="!livro.image ? '/assets/noimage.png' : livro.image" alt="Sem imagem" class="card-img-top">
+    <h3>{{livro.id}}. {{livro.name || 'livro Name'}}</h3>
+    <p>{{livro.type || 'livro Type'}}</p>
+    <p>{{livro.description || 'livro Descrition'}}</p>
+    <p>{{livro.year || 'livro Year'}}</p>
   </div>
 </div>

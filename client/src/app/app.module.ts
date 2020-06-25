@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { AlertComponent } from "./components/alerts/alert.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LivroDescriptionComponent } from "./components/livro-description/livro-description.component";
 import { LivroEditComponent } from "./components/livro-edit/livro-edit.component";
@@ -31,7 +30,6 @@ import { LivrosService } from "./services/livros.service";
     LivroRentedComponent,
     LoginComponent,
     RegisterComponent,
-    AlertComponent,
     FilterPipe,
     LivroEditComponent,
   ],
