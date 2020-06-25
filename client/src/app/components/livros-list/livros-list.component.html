@@ -2,22 +2,22 @@
 <div>
   <div *ngIf="(livros | filter: searchText).length > 0; else noResults">
     <div class="livros moldura" *ngFor="let livro of livros | filter: searchText; let i = index">
-          
-          <div class="bg-dark text-white backgroundTitulo">
-            <div class="tituloNome">
-              {{livro.name}}
-            </div>
-          </div>
-          <div class="backgroundImg">
-            <img class="img" [src]="livro.image">
-          </div>
-          <div class="fonte">
-            <div>Tipo</div>
-            <div>{{livro.type}}</div>
-            <div>Ano</div>
-            <div >{{livro.year}}</div>
-          </div>
-          <a [routerLink]="['/livros/description', livro.id]" class="btn btn-detalhe btn-block positionBotaoEd">Detalhes</a>
+
+      <div class="bg-dark text-white backgroundTitulo">
+        <div class="tituloNome">
+          {{livro.name}}
+        </div>
+      </div>
+      <div class="backgroundImg">
+        <img class="img" [src]="livro.image">
+      </div>
+      <div class="fonte">
+        <div>Tipo</div>
+        <div>{{livro.type}}</div>
+        <div>Ano</div>
+        <div>{{livro.year}}</div>
+      </div>
+      <a [routerLink]="['/livros/description', livro.id]" class="btn btn-detalhe btn-block positionBotaoEd">Detalhes</a>
     </div>
   </div>
 </div>

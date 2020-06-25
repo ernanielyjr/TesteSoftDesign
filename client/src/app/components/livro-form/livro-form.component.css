@@ -1,15 +1,15 @@
-@media(max-width:800px){
-    .position{
-        position: relative;
-        top: -350px;
-        left: 530px;
-    }
+@media (max-width: 800px) {
+  .position {
+    position: relative;
+    top: -350px;
+    left: 530px;
+  }
 }
 
-@media(min-width:801px){
-    .position{
-        position: relative;
-        top: -350px;
-        left: 535px;
-    }
+@media (min-width: 801px) {
+  .position {
+    position: relative;
+    top: -350px;
+    left: 535px;
+  }
 }

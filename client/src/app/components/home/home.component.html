@@ -1,23 +1,9 @@
-<!-- 
-<div class="container" routerLink="/livros">
-    <div class="container__image" style="margin-bottom: 30px;  background-image:url('https://www.universidadsise.edu.pe/noticias/biblioteca-virtual.jpg');">
-        <div class="container__info container__author fonte">Acesse a biblioteca</div>
-    </div>
-</div>
-<div class="container" routerLink="/livros/add">
-    <div class="container__image" style="background-image:url('https://jonathanlamim.com.br/wp-content/uploads/2017/04/home-desafios-de-escrever-um-livro-1024x538.png');">
-        <div class="container__info container__author fonte2">Cadastre um novo livro</div>
-    </div>
-</div> -->
-
-
-
-    <h1>Olá {{currentUser.firstName}}, Bem vindo!</h1>
-    <h6>*Ao deletar sua conta, terá que criar outra para acessar os livros!</h6>
-    <h6>**Aqui listará todas as contas cadastradas</h6>
-<ul class="rectangle-list"  *ngFor="let user of users" style="max-width: 250px;">
-    <li> Nome: {{user.firstName}}</li>
-    <li> Sobrenome: {{user.lastName}}</li>
-    <li> Usuario: {{user.username}}</li>
-    <a (click)="deleteUser(user.id)" (click)="logout()" class="text-danger" style="right: 30px;">Deletar</a>
+<h1>Olá {{currentUser.firstName}}, Bem vindo!</h1>
+<h6>*Ao deletar sua conta, terá que criar outra para acessar os livros!</h6>
+<h6>**Aqui listará todas as contas cadastradas</h6>
+<ul class="rectangle-list" *ngFor="let user of users" style="max-width: 250px;">
+  <li> Nome: {{user.firstName}}</li>
+  <li> Sobrenome: {{user.lastName}}</li>
+  <li> Usuario: {{user.username}}</li>
+  <a (click)="deleteUser(user.id)" (click)="logout()" class="text-danger" style="right: 30px;">Deletar</a>
 </ul>

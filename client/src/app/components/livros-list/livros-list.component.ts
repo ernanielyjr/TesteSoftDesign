@@ -1,7 +1,6 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-
-import { LivrosService } from '../../services/livros.service';
+import { Component, OnInit } from '@angular/core';
 import { Livro } from 'src/app/models/livro';
+import { LivrosService } from '../../services/livros.service';
 
 @Component({
   selector: 'app-livros-list',
@@ -22,10 +21,10 @@ export class LivrosListComponent implements OnInit {
 
   getLivros() {
     this.livroService.getLivros()
-    .toPromise()
-        .then((livros: Livro[]) => {
-            this.livros = livros;
-        }).catch(err => console.log(err));
+      .toPromise()
+      .then((livros: Livro[]) => {
+        this.livros = livros;
+      }).catch(err => console.log(err));
   }
 
 }

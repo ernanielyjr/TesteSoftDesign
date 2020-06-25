@@ -1,8 +1,7 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-
-import { LivrosService } from 'src/app/services/livros.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Livro } from 'src/app/models/Livro';
+import { LivrosService } from 'src/app/services/livros.service';
 
 @Component({
   selector: 'app-livro-description',
@@ -27,19 +26,19 @@ export class LivroDescriptionComponent implements OnInit {
       const id: number = +params['id'];
       if (id) {
         this.livroService.getLivro(id)
-        .toPromise()
-        .then((livro: Livro) => {
-             console.log(livro);
-             this.livro = livro;
-        });
+          .toPromise()
+          .then((livro: Livro) => {
+            console.log(livro);
+            this.livro = livro;
+          });
       }
-        if (id) {
-          this.livroService.getRentLivro(id)
+      if (id) {
+        this.livroService.getRentLivro(id)
           .toPromise()
           .then((livro: Livro) => {
             this.isDisabled = true;
           });
-        }
+      }
     });
   }
 
@@ -58,9 +57,9 @@ export class LivroDescriptionComponent implements OnInit {
 
   delLivro(id: number) {
     this.livroService.deleteLivro(id)
-    .toPromise()
+      .toPromise()
       .then((livros: Livro[]) => {
-          this.livros = livros;
+        this.livros = livros;
       },
         err => console.log(err)
       );
@@ -68,9 +67,9 @@ export class LivroDescriptionComponent implements OnInit {
 
   delRentLivro(id: number) {
     this.livroService.deleteRentLivro(id)
-    .toPromise()
+      .toPromise()
       .then((livros: Livro[]) => {
-          this.livros = livros;
+        this.livros = livros;
       },
         err => console.log(err)
       );

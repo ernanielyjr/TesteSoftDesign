@@ -13,5 +13,5 @@ export class FilterPipe implements PipeTransform {
         return String(item[key]).toLowerCase().includes(searchText.toLowerCase());
       });
     });
-   }
+  }
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { LivrosService } from 'src/app/services/livros.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Livro } from 'src/app/models/Livro';
+import { LivrosService } from 'src/app/services/livros.service';
+
 @Component({
   selector: 'app-livro-form',
   templateUrl: './livro-form.component.html',
@@ -15,22 +15,22 @@ export class LivroFormComponent implements OnInit {
 
   constructor(
     private livroService: LivrosService,
-     private router: Router,
-      private activatedRoute: ActivatedRoute
-      ) { }
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.livro = new Livro;
     this.activatedRoute.params.forEach((params: Params) => {
       const id: number = +params['id'];
-        if (id) {
+      if (id) {
         this.livroService.getLivro(id)
-        .toPromise()
-            .then((livro: Livro) => {
-                console.log(livro);
-                this.livro = livro;
-            });
-        }
+          .toPromise()
+          .then((livro: Livro) => {
+            console.log(livro);
+            this.livro = livro;
+          });
+      }
     });
   }
 

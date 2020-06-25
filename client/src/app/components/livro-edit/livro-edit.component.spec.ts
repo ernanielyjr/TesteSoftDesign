@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LivroEditComponent } from './livro-edit.component';
 
 describe('LivroEditComponent', () => {
@@ -8,9 +7,9 @@ describe('LivroEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LivroEditComponent ]
+      declarations: [LivroEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LivroFormComponent } from './livro-form.component';
 
 describe('LivroFormComponent', () => {
@@ -8,9 +7,9 @@ describe('LivroFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LivroFormComponent ]
+      declarations: [LivroFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

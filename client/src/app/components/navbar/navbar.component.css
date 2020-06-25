@@ -1,19 +1,18 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
-
-@media (min-width: 500px){
+@media (min-width: 500px) {
   .modal-dialog {
     max-width: 460px !important;
     margin: 1.75rem auto;
   }
 }
 
-.textoModal{
+.textoModal {
   text-align: center;
   margin-bottom: 15px;
 }
 
-.botaoRemoverModal{
+.botaoRemoverModal {
   margin-top: 20px;
   margin-left: 7px;
   width: 170px;
@@ -25,7 +24,7 @@
   border: none;
 }
 
-.botaoFecharModal{
+.botaoFecharModal {
   margin-top: 20px;
   margin-left: 7px;
   width: 170px;
@@ -37,14 +36,14 @@
   border: none;
 }
 
-.botaoRemover{
+.botaoRemover {
   border: none;
   float: right;
   background-color: transparent;
   color: white;
 }
 
-.carrinhoEmpty{
+.carrinhoEmpty {
   text-align: center;
   text-transform: uppercase;
   margin: 100px 0px;
@@ -72,17 +71,17 @@
   transform: none;
 }
 
-.cabecalhoModal{
+.cabecalhoModal {
   width: 100%;
   height: 70px;
   background-color: lightgray;
-  float: left; 
+  float: left;
   padding: 1em;
   font-weight: bold;
   font-size: 20px;
 }
 
-.botaoFechar{
+.botaoFechar {
   border: none;
   background-color: lightgray;
   font-weight: bold;
@@ -90,46 +89,46 @@
   float: right;
 }
 
-.corpoModal{
+.corpoModal {
   padding: 1.5em;
   text-transform: capitalize;
 }
 
-.nomeModal{
+.nomeModal {
   font-weight: bold;
   margin-top: 70px;
 }
 
-.descricaoLongaModal{
-  margin-top: 10px; 
+.descricaoLongaModal {
+  margin-top: 10px;
 }
 
-.estoqueModal{
+.estoqueModal {
   font-weight: bold;
   margin-top: 10px;
 }
 
-.precoModal{
+.precoModal {
   font-weight: bold;
   margin-top: 15px;
 }
 
-.lineModal{
+.lineModal {
   margin-top: 40px !important;
 }
 
-.campoTextoModal{
+.campoTextoModal {
   border: solid 1px lightgray;
   margin-top: 20px;
   margin-left: 50px;
   width: 170px;
   height: 45px;
   font-size: 12px;
-  padding: 1em; 
+  padding: 1em;
 }
 
-.botaoComprarModal{
-  float:right;
+.botaoComprarModal {
+  float: right;
   margin-top: 20px;
   width: 170px;
   height: 45px;
@@ -140,29 +139,29 @@
   border: none;
 }
 
-.botaoComprarModal:hover{
+.botaoComprarModal:hover {
   color: darkgray;
   border: solid 2px darkgray;
   background-color: white;
 }
 
-.corpoModalSucess{
+.corpoModalSucess {
   padding: 3em;
   text-align: center;
 }
 
-.positionCarrinho{
+.positionCarrinho {
   margin-top: 60px;
 }
 
-.backgroundTotal{
+.backgroundTotal {
   background-color: #6b6363d6;
   color: white;
   width: 100%;
   height: 25px;
 }
 
-.total{
+.total {
   float: right;
   text-transform: uppercase;
   font-size: 16px;
@@ -171,18 +170,18 @@
   right: 25px;
 }
 
-.cabecalhoModalHeader{
+.cabecalhoModalHeader {
   width: 100%;
   height: 70px;
   background-color: #6b6363d6;
   color: white;
-  float: left; 
+  float: left;
   padding: 1em;
   font-weight: bold;
   font-size: 20px;
 }
 
-.botaoFecharHeader{
+.botaoFecharHeader {
   border: none;
   background-color: transparent;
   color: white;
@@ -191,7 +190,7 @@
   float: right;
 }
 
-.corpoModalHeader{
+.corpoModalHeader {
   padding: 1.5em;
   text-transform: capitalize;
   background-color: #6b6363d6;
@@ -199,25 +198,23 @@
   min-height: 170px;
 }
 
-.msgErr{
+.msgErr {
   color: red;
   margin-top: 15px;
   margin-left: 50px;
 }
 
-.msgErr2{
+.msgErr2 {
   color: red;
   margin-top: 15px;
   margin-left: 50px;
 }
 
-.produtoNome{
-  float:left;
+.produtoNome {
+  float: left;
 }
 
-.produtoQuantidade{
-  float:left;
+.produtoQuantidade {
+  float: left;
   margin: 0px 50px;
 }
-
-

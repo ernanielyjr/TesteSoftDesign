@@ -1,105 +1,105 @@
 .moldura {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
 }
 
-.backgroundImg{
-    max-width: 125px;
-    margin-bottom: 20px;
-    position: absolute;
-    top: 40px;
+.backgroundImg {
+  max-width: 125px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 40px;
 }
 
 .img {
-    width: 100%;
-    height: 165px;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
-    position: relative;
-    left: 60px;
-    top: 25px;
+  width: 100%;
+  height: 165px;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  position: relative;
+  left: 60px;
+  top: 25px;
 }
 
-.backgroundLivros{
-    display: inline-flex;
+.backgroundLivros {
+  display: inline-flex;
 }
 
-.livros{
-    border: 1px solid rgba(0,0,0,.125);
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    float: left;
-    height: 400px;
-    max-height: 400px;
-    width: 240px;
-    max-width: 240px;
-    margin: 10px;
+.livros {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  float: left;
+  height: 400px;
+  max-height: 400px;
+  width: 240px;
+  max-width: 240px;
+  margin: 10px;
 }
 
-.backgroundTitulo{
-    height: 60px;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 40px;
+.backgroundTitulo {
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 40px;
 }
 
-.tituloNome{
-    position: relative;
-    top: 5px;
-    left: 15px;
-    text-align: -webkit-center;
-    font-weight: bold;
-    max-width: 160px;
+.tituloNome {
+  position: relative;
+  top: 5px;
+  left: 15px;
+  text-align: -webkit-center;
+  font-weight: bold;
+  max-width: 160px;
 }
 
-.fonte{
-    position: relative;
-    top: 185px;
-    text-align: -webkit-center;
-    font-family: serif;
-    font-weight: bold;
-    font-size: larger;
+.fonte {
+  position: relative;
+  top: 185px;
+  text-align: -webkit-center;
+  font-family: serif;
+  font-weight: bold;
+  font-size: larger;
 }
 
-.positionBotaoEd{
-    position: absolute;
-    bottom: 0px;
+.positionBotaoEd {
+  position: absolute;
+  bottom: 0px;
 }
 
-.positionCampoBusca{
-    position: absolute;
-    top: 8px;
-    left: 140px;
-    border: 2px solid  rgba(0,0,0,.125);
-    border-radius: 1.10rem;
-    width: 230px;
-    height: 40px;
+.positionCampoBusca {
+  position: absolute;
+  top: 8px;
+  left: 140px;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  border-radius: 1.1rem;
+  width: 230px;
+  height: 40px;
 }
 
-.btn-detalhe{
-    color: rgb(0, 0, 0);
-    background-color: #fff;
-    border-color: #fff;
-    border: 1px solid black;
-    border-radius: 5px;
+.btn-detalhe {
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+  border-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
-.btn-detalhe:hover{
-    color: #fff;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-    border: 1px solid black;
-    border-radius: 5px;
+.btn-detalhe:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
-.btn-deletar{
-    float: right ;
-    position: absolute;
-    right: 20px;
-    top: 10px;
+.btn-deletar {
+  float: right;
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }

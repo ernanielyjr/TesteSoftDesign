@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { LivroDescriptionComponent } from './components/livro-description/livro-description.component';
-import { LivrosListComponent } from './components/livros-list/livros-list.component';
-import { LivroFormComponent } from './components/livro-form/livro-form.component';
-import { LivroEditComponent } from './components/livro-edit/livro-edit.component';
-import { LivroRentedComponent } from './components/livro-rented/livro-rented.component';
-import { LoginComponent } from './components/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { LivroDescriptionComponent } from './components/livro-description/livro-description.component';
+import { LivroEditComponent } from './components/livro-edit/livro-edit.component';
+import { LivroFormComponent } from './components/livro-form/livro-form.component';
+import { LivroRentedComponent } from './components/livro-rented/livro-rented.component';
+import { LivrosListComponent } from './components/livros-list/livros-list.component';
+import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 
